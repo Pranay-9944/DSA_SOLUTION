@@ -1,4 +1,4 @@
-package file;
+package TWO_D_array;
 
 
 public class secondRowSum {
