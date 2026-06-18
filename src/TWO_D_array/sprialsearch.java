@@ -1,3 +1,5 @@
+package TWO_D_array;
+
 import java.util.Scanner;
 
 public class sprialsearch {

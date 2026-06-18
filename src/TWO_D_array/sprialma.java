@@ -1,3 +1,5 @@
+package TWO_D_array;
+
 public class sprialma {
 
     public static void spiralMatrix(int[][] mat) {

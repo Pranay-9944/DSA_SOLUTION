@@ -1,3 +1,5 @@
+package TWO_D_array;
+
 public class starecasesearch
 {
     public  static boolean starecase(int mat[][] , int key)

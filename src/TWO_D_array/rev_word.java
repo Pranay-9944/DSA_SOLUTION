@@ -1,4 +1,6 @@
- class rev_word {
+package TWO_D_array;
+
+class rev_word {
 
     public static String rev(String st)
     {

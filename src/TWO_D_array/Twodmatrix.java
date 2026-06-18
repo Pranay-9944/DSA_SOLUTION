@@ -1,4 +1,5 @@
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
+package TWO_D_array;
+
 import java.util.Scanner;
 
 public class Twodmatrix {
