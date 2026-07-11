@@ -107,11 +107,54 @@ public class LinkedList {
       seclast.next=null;
    }
 
+   public void rev()
+   {
+       Node temp=head;
+       Node prev=null;
+       while(temp!=null)
+       {
+            Node front=temp.next;
+            temp.next=prev;
+            prev=temp;
+            temp=front;
+       }
+
+       head = prev;
+   }
+public void delnthnode(int n )
+{
+    int size=0;
+    Node temp=head;
+    while(temp!=null)
+    {
+        temp=temp.next;
+        size++;
+
+    }
+    if(n==size)
+    {
+        head=head.next;
+        return;
+    }
+    int i=0;
+    int itofind=size-n;
+    Node prev=head;
+    while(i<itofind)
+    {
+        prev=prev.next;
+        i++;
+    }
+    prev.next=prev.next.next;
+    return;
+}
+
     public static void main(String[] args)
     {
     LinkedList l=new LinkedList();
     l.adFirst(10);
     l.Addlast(11);
-    l.display();
+     l.delnthnode(3);
+        l.display();
+
     }
 }
