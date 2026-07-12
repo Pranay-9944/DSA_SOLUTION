@@ -147,14 +147,61 @@ public void delnthnode(int n )
     prev.next=prev.next.next;
     return;
 }
+public Node ftm(Node head)
+{
+    Node slow=head;
+    Node fast=head;
+    while(fast!=null && fast.next!=null)
+    {
+      slow=slow.next;
+      fast=fast.next.next;
+    }
+    return slow;
+}
+public boolean checkpalin()
+{
+    if(head==null || head.next==null)
+    {
+        return true;
+    }
+    Node mid=ftm(head);
+Node prev=null;
+Node curr=mid;
+Node next;
+while(curr!=null)
+{
+    next=curr.next;
+    curr.next=prev;
+    prev=curr;
+        curr=next;
+
+
+
+}
+Node right=prev;
+Node left=head;
+
+
+while(right!=null)
+{
+    if(left.data != right.data)
+    {
+        return false;
+    }
+    left=left.next;
+    right=right.next;
+
+}
+return true;
+}
+
 
     public static void main(String[] args)
     {
     LinkedList l=new LinkedList();
     l.adFirst(10);
-    l.Addlast(11);
-     l.delnthnode(3);
-        l.display();
-
+        l.adFirst(20);
+        l.adFirst(10);
+        System.out.println( l.checkpalin());;
     }
 }
