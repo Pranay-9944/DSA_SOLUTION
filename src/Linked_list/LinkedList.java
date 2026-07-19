@@ -1,6 +1,6 @@
 package Linked_list;
 
-public class LinkedList<I extends Number> {
+public class LinkedList {
 
     static class Node {
         int data;
@@ -14,14 +14,11 @@ public class LinkedList<I extends Number> {
 
     }
 
-    Node head;
+   static Node head=null;
 
     public void adFirst(int data) {
         Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+
         newNode.next = head;
         head = newNode;
     }
@@ -32,12 +29,11 @@ public class LinkedList<I extends Number> {
             head = NewNode;
             return;
         }
-        Node cur = head;
-        while (cur.next != null) {
-            cur.next = cur.next;
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
         }
-        cur.next = NewNode;
-        NewNode.next = null;
+        temp.next = NewNode;
 
     }
 
@@ -56,9 +52,11 @@ public class LinkedList<I extends Number> {
 
     public void addmiddel(int data, int inx) {
         Node newnode = new Node(data);
-        if (head == null) {
-            head = newnode;
-            return;
+        if(inx==0)
+            {
+                newnode.next=head;
+                head=newnode;
+                return;
         }
         Node cur = head;
         int i = 0;
@@ -88,12 +86,32 @@ public class LinkedList<I extends Number> {
             System.out.println("list empty");
             return;
         }
-        while (cur.next != null) {
-            cur = cur.next;
-            seclast = seclast.next;
-
+        while(cur.next.next!=null)
+        {
+           cur= cur.next;
         }
-        seclast.next = null;
+        cur.next=null;
+    }
+    public void delmid(int data ,int idx)
+    {
+        if(head==null)
+        {
+            return;
+        }
+
+        if(idx==0)
+        {
+            head=head.next;
+            return;
+        }
+
+        Node temp=head;
+        for (int i = 0; i < idx-1; i++) {
+
+        temp=    temp.next;
+        }
+
+        temp.next=temp.next.next;
     }
 
     public void rev() {
@@ -109,27 +127,13 @@ public class LinkedList<I extends Number> {
         head = prev;
     }
 
-    public void delnthnode(int n) {
-        int size = 0;
-        Node temp = head;
-        while (temp != null) {
-            temp = temp.next;
-            size++;
+    public void delnthnode11(int n) {
+      Node temp=head;
+        for (int i = 0; i < n-1; i++) {
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;
 
-        }
-        if (n == size) {
-            head = head.next;
-            return;
-        }
-        int i = 0;
-        int itofind = size - n;
-        Node prev = head;
-        while (i < itofind) {
-            prev = prev.next;
-            i++;
-        }
-        prev.next = prev.next.next;
-        return;
     }
 
     public Node ftm(Node head) {
@@ -211,37 +215,15 @@ public class LinkedList<I extends Number> {
     }
 
 
-    public static Node odd_even(Node head) {
-        if (head == null || head.next == null) {
-            return head;
 
-            Node odd = head;
-            Node even = head.next;
-            Node evenHead = even;
-
-
-            while (even != null && even.next != null) {
-                odd.next = even.next;
-                odd = odd.next;
-                even.next = odd.next;
-                even = even.next;
-
-            }
-            odd.next = evenHead;
-
-
-        }
-
-
-        return head;
-    }
 
     public static void main(String[] args)
     {
-    LinkedList<Number> l=new LinkedList<Number>();
+    LinkedList l=new LinkedList();
     l.adFirst(10);
         l.adFirst(20);
         l.adFirst(10);
-       l.odd_even(l.head);
+        l.adFirst(40);
+        l.display();
     }
 }
