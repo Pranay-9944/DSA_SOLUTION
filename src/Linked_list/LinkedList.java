@@ -213,17 +213,58 @@ public class LinkedList {
 
 
     }
+    public static  int size()
+    {
+        int size=0;
+        Node temp=head;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            size++;
+        }
+        return size;
+    }
 
 
+public static  void swap_k(Node head,int k)
+{
+    Node temp=head;
+    int orgk=k;
+    while(orgk-1>0)
+    {
+        temp=temp.next;
+        orgk--;
 
+    }
+    int size=size();
+    int sizetogo=size-k;
+
+    Node temp2=head;
+    while(sizetogo>0)
+    {
+        temp2=temp2.next;
+        sizetogo--;
+
+
+    }
+
+    int swap1=temp.data;
+    temp.data=temp2.data;
+    temp2.data=swap1;
+}
 
     public static void main(String[] args)
     {
     LinkedList l=new LinkedList();
+    int k=2;
     l.adFirst(10);
         l.adFirst(20);
         l.adFirst(10);
         l.adFirst(40);
+        l.adFirst(30);
+        l.display();
+        System.out.println(" ");
+        swap_k(head,k);
         l.display();
     }
 }

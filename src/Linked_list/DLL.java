@@ -189,20 +189,32 @@ public void revrese()
     public Node removeElements(Node head, int val) {
         Node temp = head;
 
-        if(temp)
         while (temp != null) {
             if (temp.data == val) {
+                //del 1st node
+                if (temp.prev == null) {
+                    head = temp.next;
+                    if (head != null) {
+                        head.prev = null;
+                    }
+                }
+                else if(temp.next==null) {
 
-                temp.prev.next=temp.next;
-                temp.next.prev=temp.prev;
+                    temp.prev.next=null;
 
+                }
+                else {
+
+                    temp.prev.next = temp.next;
+                    temp.next.prev = temp.prev;
+                }
 
             }
             temp=temp.next;
 
         }
-return ;
-    }
+return head ;
+
     }
 
 public static void main(String[] args)
@@ -215,6 +227,8 @@ l.addlast(40);
 l.display();
 l.revrese();
 l.display();
+    l.head = l.removeElements(l.head, 20);
+    l.display();
+}
+}
 
-}
-}
