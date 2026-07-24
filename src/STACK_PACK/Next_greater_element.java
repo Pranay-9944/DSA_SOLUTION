@@ -56,31 +56,68 @@
 
 package STACK_PACK;
 
-public class Next_greater_element {
+import java.util.Stack;
 
-    void main() {
-
+//
+//public class Next_greater_element {
+//
+//    void main() {
+//
+//        int[] a = {6, 8, 2, 1, 0};
+//        int[] ans = new int[a.length];
+//
+//
+//        int i = 0;
+//        while (i < a.length) {
+//            int j = i + 1;
+//            ans[i] = -1;
+//
+//
+//        while (j < a.length)
+//        {
+//            if(a[j]>a[i])
+//            {
+//                ans[i]=a[j];
+//                break;
+//            }
+//            j++;
+//        }
+//        i++;
+//    }
+//        for (int x : a) {
+//            System.out.print(x + " ");
+//        }
+//
+//        System.out.println();
+//
+//        for (int x : ans) {
+//            System.out.print(x + " ");
+//        }
+//    }
+//}
+public class Next_greater_element
+{
+    void main()
+    {
         int[] a = {6, 8, 2, 1, 0};
-        int[] ans = new int[a.length];
+        int[] ans=new int[a.length];
+        Stack <Integer> s= new Stack<>();
 
+        for (int i = a.length-1; i >=0 ; i--) {
 
-        int i = 0;
-        while (i < a.length) {
-            int j = i + 1;
-            ans[i] = -1;
-
-
-        while (j < a.length)
-        {
-            if(a[j]>a[i])
+            while(!s.empty() && a[s.peek()]<=a[i])
             {
-                ans[i]=a[j];
-                break;
+                s.pop();
             }
-            j++;
+            if(s.isEmpty())
+            {
+                ans[i]=-1;
+            }else{
+               ans[i]=a[s.peek()];
+            }
+            s.push(i);
         }
-        i++;
-    }
+
         for (int x : a) {
             System.out.print(x + " ");
         }
@@ -90,5 +127,5 @@ public class Next_greater_element {
         for (int x : ans) {
             System.out.print(x + " ");
         }
-    }
+        }
 }
