@@ -31,6 +31,7 @@ public class Duplictae {
     void main()
     {
         String a="(A+b)";
+        String b="((A=b))";
         System.out.println(   duplicate_parenthesis(a));;
     }
 }
