@@ -40,7 +40,13 @@ public class Next_great {
     for (int o:a)
     {
         System.out.println(o);
+
     }
+        for (int o:a)
+        {
+            System.out.println(o);
+
+        }
     }
 
 }
