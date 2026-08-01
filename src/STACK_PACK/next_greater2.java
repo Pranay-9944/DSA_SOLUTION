@@ -7,29 +7,29 @@ import java.util.Stack;
 public class next_greater2 {
     public static void next2(int[] a) {
 
-        int n = a.length;
-        int[] ans = new int[n];
+            int n = a.length;
+            int[] ans = new int[n];
 
-        int i = 0;
+            int i = 0;
 
-        while (i < n) {
+            while (i < n) {
 
-            ans[i] = -1;
-            int count = 1;
+                ans[i] = -1;
+                int count = 1;
 
-            while (count < n) {
+                while (count < n) {
 
-                int j = (i + count) % n;
+                    int j = (i + count) % n;
 
-                if (a[j] > a[i]) {
-                    ans[i] = a[j];
-                    break;
+                    if (a[j] > a[i]) {
+                        ans[i] = a[j];
+                        break;
+                    }
+
+                    count++;
                 }
 
-                count++;
-            }
-
-            i++;
+                i++;
         }
 
         for (int x : ans)
@@ -38,6 +38,7 @@ public class next_greater2 {
     void main()
     {
         int a[]={1,2,3,4,1};
+        int b[]={1,2,3,4,1};
         next2(a);
     }
 }
