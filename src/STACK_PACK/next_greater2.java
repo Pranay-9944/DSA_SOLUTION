@@ -38,6 +38,6 @@ public class next_greater2 {
     void main()
     {
         int a[]={1,2,3,4,1};
-        next2(a);
+
     }
 }
