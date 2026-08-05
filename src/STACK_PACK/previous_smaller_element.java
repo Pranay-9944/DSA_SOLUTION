@@ -21,7 +21,7 @@ public class previous_smaller_element {
             } else {
                 ana[i] = stack.peek();
             }
-            stack.push(a[i]);
+            stack.push(i);
 
         }
 
