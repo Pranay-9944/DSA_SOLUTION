@@ -1,6 +1,6 @@
 package STACK_PACK;
 
-public class sum_of_subarray_range {
+public class sum_of_subarray_range_brute {
     public  static  void range(int a[]){
 
         int sum=0;
