@@ -25,6 +25,7 @@ public class astroid_colison_brute {
                         list.remove(i + 1);
                     }
                     changed = true;
+                    break;
                 }
             }
         }
