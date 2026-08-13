@@ -57,6 +57,5 @@ public class Sliding_window_max {
         int a[]={1,3,-1,-3,5,3,6,7};
 
         maximum(a);
-        maximum(b);
     }
 }
