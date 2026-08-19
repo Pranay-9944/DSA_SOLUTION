@@ -47,7 +47,7 @@ public class implemnt_stack_queuw {
 Stack s= new Stack();
 s.push(10);
         s.push(20);
-        s.push(30);
+
 
 int n=s.size();
         for (int i = 0; i < n; i++) {
