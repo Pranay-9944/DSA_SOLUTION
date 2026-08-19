@@ -48,7 +48,6 @@ Stack s= new Stack();
 s.push(10);
         s.push(20);
         s.push(30);
-        s.push(40);
 
 int n=s.size();
         for (int i = 0; i < n; i++) {
