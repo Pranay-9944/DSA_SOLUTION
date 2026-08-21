@@ -15,7 +15,7 @@ public class binary_quque {
             String s = q.peek();    // look at front
             q.remove();             // remove that same front element
             System.out.println(s);
-              String s1=s+"0";git
+              String s1=s+"0";
               q.add(s1);
             String s2=s+"1";
             q.add(s2);
