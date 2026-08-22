@@ -27,5 +27,6 @@ public class prob_435_non_overlapping {
 
         }
         System.out.println(count);
+        System.out.println(count);
     }
 }
