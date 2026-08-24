@@ -24,6 +24,7 @@ public class prob_435_non_overlapping {
                 t=pairs[i][1];
 
             }
+        }System.out.println(count);
 
         }System.out.println(count);
     }
