@@ -20,7 +20,7 @@ public class prob_435_non_overlapping {
             if (pairs[i][0] >= t) {
                 count--;
                 t = pairs[i][1];
-                System.out.println("hello");
+
 
 }
         }
